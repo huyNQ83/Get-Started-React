@@ -10,6 +10,8 @@ function App() {
     const todoList = document.querySelector('#todoList').value
     console.log("🚀 ~ file: App.js ~ line 11 ~ getTodo ~ todoList", todoList)
 
+    document.querySelector('#todoList').value = '';
+
     setTodos([...todos, todoList]);
   }
 
