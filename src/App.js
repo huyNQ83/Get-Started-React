@@ -15,6 +15,11 @@ function App() {
     setTodos([...todos, todoList]);
   }
 
+  const removeTodo = (id) => {
+    const newTodoList = todos.filter(todo => (todos.indexOf(todo) !== (id)))
+    setTodos(newTodoList);
+  }
+
   return (
     <div className ='App'>
       <h1>What needs to be done?</h1>
@@ -23,7 +28,8 @@ function App() {
 
       <ul>
         { todos.map((todo, ids) =>(
-          <li key={ids}>{todo}</li>
+          <li key={ids}>{todo}
+          <button id='deleteTodo' onClick={() => removeTodo(ids)}>Delete</button></li>
         ))}
       </ul>
     </div>
